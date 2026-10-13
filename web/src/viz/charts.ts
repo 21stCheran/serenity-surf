@@ -77,6 +77,7 @@ export function ribbonOption(hours: HourScore[], mode: Mode): EOption {
       type: 'category',
       data: hours.map((h) => h.t),
       axisLabel: {
+        hideOverlap: true,
         interval: (i: number) => new Date((hours[i].t + 19800) * 1000).getUTCHours() % 6 === 0,
         formatter: (v: string) => {
           const t = Number(v);

@@ -117,7 +117,7 @@ export default function Seasons() {
           right={<Segmented size="sm" value={metric} onChange={setMetric} options={[{ value: 'best', label: 'Score' }, { value: 'face', label: 'Size' }]} />}
           chart={
             <>
-              <EChart height={560} option={(m) => climateWheelOption(days, m, metric)} onClick={(p) => p?.dataIndex != null && setCalYear(days[p.dataIndex].year)} />
+              <EChart height={Math.min(560, Math.max(320, (typeof window !== 'undefined' ? window.innerWidth : 600) - 40))} option={(m) => climateWheelOption(days, m, metric)} onClick={(p) => p?.dataIndex != null && setCalYear(days[p.dataIndex].year)} />
               <ScaleLegend />
             </>
           }
