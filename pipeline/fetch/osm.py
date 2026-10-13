@@ -31,9 +31,9 @@ def load(radius_deg: float = 0.07, max_age_hours: float = 24 * 90) -> dict:
     import requests  # plain session: the shared one retries 6x with backoff, too slow for flaky mirrors
 
     for url in MIRRORS:
-        for _ in range(2):
+        for _ in range(1):
             try:
-                r = requests.post(url, data={"data": q}, timeout=(10, 75), headers={"User-Agent": http().headers["User-Agent"]})
+                r = requests.post(url, data={"data": q}, timeout=(10, 60), headers={"User-Agent": http().headers["User-Agent"]})
                 if r.status_code == 200 and r.text.strip().startswith("{"):
                     d = r.json()
                     if d.get("elements"):
