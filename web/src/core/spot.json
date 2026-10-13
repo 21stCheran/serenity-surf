@@ -1,0 +1,26 @@
+{
+  "id": "serenity",
+  "name": "Serenity Beach",
+  "region": "Kottakuppam, Puducherry, India",
+  "lat": 11.9706,
+  "lon": 79.8446,
+  "timezone": "Asia/Kolkata",
+  "utcOffsetMinutes": 330,
+  "coastAxis": 16,
+  "beachNormal": 106,
+  "offshoreFrom": 286,
+  "wavePoint": { "lat": 11.97, "lon": 79.87 },
+  "windPoint": { "lat": 11.97, "lon": 79.86 },
+  "swellWindow": { "min": 16, "max": 196 },
+  "shadow": { "name": "Sri Lanka", "min": 155, "max": 185 },
+  "surf": {
+    "siteFactor": 0.8,
+    "faceLo": 0.8,
+    "faceHi": 1.2
+  },
+  "sediment": { "d50mm": 0.35, "fallVelocity": 0.045 },
+  "historyStart": "2015-01-01",
+  "longHistoryStart": "1980-01-01",
+  "repo": "21stCheran/serenity-surf",
+  "siteUrl": "https://21stcheran.github.io/serenity-surf/"
+}

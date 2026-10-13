@@ -1,0 +1,118 @@
+import type { Profile } from './types';
+
+const PERIOD: [number, number][] = [
+  [0, 0.45],
+  [5, 0.5],
+  [6, 0.6],
+  [7, 0.72],
+  [8, 0.82],
+  [9, 0.9],
+  [10, 0.97],
+  [11, 1.0],
+  [13, 1.05],
+  [16, 1.08],
+];
+
+export const PROFILES: Profile[] = [
+  {
+    id: 'all-rounder',
+    name: "6'10 all-rounder",
+    board: "6'10 mid-length",
+    blurb: 'Clean 3 ft is already good, 4–8 ft is the sweet spot, cyclone swell still rates high.',
+    size: [
+      [0, 0],
+      [1, 0],
+      [1.5, 0.8],
+      [2, 2.5],
+      [3, 6.2],
+      [4, 8.2],
+      [5, 9.3],
+      [6, 10],
+      [8, 10],
+      [10, 9],
+      [12, 8],
+      [15, 7],
+    ],
+    period: PERIOD,
+    onshorePenalty: 1,
+    tidePref: 0.5,
+    tideWeight: 0.1,
+  },
+  {
+    id: 'intermediate',
+    name: 'Intermediate',
+    board: 'Shortboard / fish',
+    blurb: 'Best at 4–6 ft clean faces; very big days get marked down.',
+    size: [
+      [0, 0],
+      [1.5, 0.5],
+      [2, 2],
+      [3, 5.5],
+      [4, 8],
+      [5, 9.5],
+      [6, 10],
+      [7, 9],
+      [8, 7.5],
+      [10, 5],
+      [12, 3],
+    ],
+    period: PERIOD,
+    onshorePenalty: 1,
+    tidePref: 0.5,
+    tideWeight: 0.1,
+  },
+  {
+    id: 'cyclone-hunter',
+    name: 'Cyclone hunter',
+    board: 'Step-up / gun',
+    blurb: 'Only gets excited when the Bay of Bengal sends real size.',
+    size: [
+      [0, 0],
+      [2, 1],
+      [3, 3.5],
+      [4, 6],
+      [6, 8.5],
+      [8, 10],
+      [12, 10],
+      [15, 9.5],
+      [20, 9],
+    ],
+    period: PERIOD,
+    onshorePenalty: 0.85,
+    tidePref: 0.5,
+    tideWeight: 0.05,
+  },
+  {
+    id: 'beginner',
+    name: 'Beginner',
+    board: 'Foamie / longboard',
+    blurb: 'Small, gentle, clean waves; anything overhead is marked down hard.',
+    size: [
+      [0, 0],
+      [0.8, 1.5],
+      [1.5, 6],
+      [2, 9],
+      [3, 10],
+      [4, 7],
+      [5, 4],
+      [6, 2],
+      [8, 0],
+    ],
+    period: [
+      [0, 0.6],
+      [6, 0.75],
+      [8, 0.9],
+      [10, 1],
+      [16, 1],
+    ],
+    onshorePenalty: 1.1,
+    tidePref: 0.5,
+    tideWeight: 0.1,
+  },
+];
+
+export const DEFAULT_PROFILE = PROFILES[0];
+
+export function profileById(id: string | undefined): Profile {
+  return PROFILES.find((p) => p.id === id) ?? DEFAULT_PROFILE;
+}

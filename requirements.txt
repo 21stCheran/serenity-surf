@@ -1,0 +1,9 @@
+# Data pipeline for Serenity Surf (Python 3.11)
+numpy==2.3.5
+pandas==2.3.3
+scipy==1.16.3
+pyarrow==21.0.0
+requests==2.32.5
+shapely==2.1.2
+utide==0.4.0
+pytest==8.4.2
